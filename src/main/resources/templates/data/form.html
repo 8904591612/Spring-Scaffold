@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>New Data</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<h1 th:if="${data.id == null}">New Data</h1>
+		<h1 th:if="${data.id != null}">Edit Data</h1>
+		<hr />
+		<form th:action="@{/datas}" th:method="@{${data.id == null} ? 'post' : 'put'}"
+			th:object="${data}">
+			<input type="hidden" th:field="*{id}" /> 
+			
+				<div class="form-group"> 
+					<label for="name">Name</label>  
+					<input id="name" name="name" type="text" class="form-control" th:field="*{name}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="profession">Profession</label>  
+					<input id="profession" name="profession" type="text" class="form-control" th:field="*{profession}" />  
+				</div> 
+
+			<button type="submit" class="btn btn-success">Save</button>
+			<a th:href="@{/datas}" class="btn btn-default">Back</a>
+		</form>
+	</div>
+</body>
+</html>
