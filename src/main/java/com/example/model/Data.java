@@ -8,6 +8,15 @@ import javax.persistence.Id;
 import java.io.Serializable;
 import java.lang.String; 
 import java.lang.String; 
+/*
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(255) | YES  |     | NULL    |                |
+| profession | varchar(255) | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+*/
 
 
 @Entity
